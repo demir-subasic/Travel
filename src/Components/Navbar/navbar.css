@@ -11,7 +11,7 @@
     --bodyColor: rgb(240, 240, 240);
     --cardBG: rgb(225, 225, 235);
 }
-.header{
+ .header{
     position: fixed;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@
     padding: 1rem;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
-
+ }
     .logo{
         color: var(--blackColor);
         font-weight: 600;
@@ -38,6 +38,19 @@
 
 
     @media screen and (max-width: 768px) {
+        .navLink{
+            color: var(--textColor); 
+            font-size: .9rem;
+            font-weight: 600;
+            
+        }
+        .navLists{
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            margin: auto;
+            padding: .5rem 0;
+        }
         .navBar{
             position: absolute;
             background: var(--whiteColorDeam);
@@ -51,38 +64,23 @@
             z-index: 2000;
             box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
             transition: .5s ease-in-out;
-
-
-            .navLists{
-                flex-direction: column;
-                justify-content: center;
-                width: 100%;
-                margin: auto;
-                padding: .5rem 0;
-
-
+        }
+        .navLink:hover {
+            color: var(--PrimaryColor);
+        }
                 .navItem{
                     padding: .5rem 0;
 
-                    .navLink{
-                        color: var(--textColor); 
-                        font-size: .9rem;
-                        font-weight: 600;
-                        &:hover {
-                            color: var(--PrimaryColor);
-                        }
-                    }
+                    
                 }
-
                 .btn{
                     margin-top: 1rem;
-
-                    a{
-                        font-weight: 600;
-                        color: var(--whiteColor);
-                    }
                 }
-            }
+                a{
+                    font-weight: 600;
+                    color: var(--whiteColor);
+                }
+            
             .closeNavbar{
                 position: absolute;
                 top: 1rem;
@@ -97,9 +95,9 @@
         .activeNavbar{
             top: 7rem;
         }
-    }
+    
 
-    .toogleNavbar {
+     .toogleNavbar {
         .icon{
             font-size: 25px;
             color: var(--PrimaryColor);
@@ -109,4 +107,50 @@
 
         }
     }
+
+
+@media screen and (min-width: 769px) {
+    .toogleNavbar,.closeNavbar {
+        display: none;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+    .navLists {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
+    .navLink {
+        color: var(--textColor);
+        padding: 0 0.45rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    .navLink:hover{
+        color: var(--PrimaryColor);
+    }
+    .btn {
+        margin-left: 1rem;
+    }
+    a{
+        color: var(--whiteColor);
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .navItem {
+        padding: 0 0.7rem;
+    }
+    
+}
+
+@media screen and (min-width: 1240px) {
+    .navItem {
+        padding: 1rem 1.5rem;
+    }
+    
 }

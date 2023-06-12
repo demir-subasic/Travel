@@ -57,7 +57,7 @@ const Navbar = () => {
             <a href="#" className="navLink">Contact</a>
           </li>
 
-          <button className='btn'>
+          <button className='btn' style={{marginLeft: '0px', marginTop: '0px'}}>
             <a href="#">BOOK NOW</a>
           </button>
 

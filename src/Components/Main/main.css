@@ -17,47 +17,43 @@
     width: 100%;
 }
 
-    .secTitle{
-        .title {
-            position: relative;
-            width: max-content;
-            color: var(--textColor);
-            margin: 1rem 0;
-            z-index: 2;
-        }
-        .title::after{
-            position: absolute;
-            content: '';
-            color: var(--SecondaryColor);
-            height: 5px;
-            width: 120px;
-            right: 0;
-            bottom: 5px;
-            z-index: -1;
+.title {
+    position: relative;
+    width: max-content;
+    color: var(--textColor);
+    margin: 1rem 0;
+    z-index: 2;
+}
+.title::after{
+    position: absolute;
+    content: '';
+    color: var(--SecondaryColor);
+    height: 5px;
+    width: 120px;
+    right: 0;
+    bottom: 5px;
+    z-index: -1;
 
-        }
-    }
+}
 
     .secContent {
        justify-content: center;
        gap: 1.5rem;
-
-
-       .imageDiv{
-         height: 180px;
-         width: 100%;
-         overflow: hidden;
-       }
-       img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        transition: 2s ease;
-       }
-       img:hover{
-        transform: scale(1.1);
-       }
     }
+    .imageDiv{
+        height: 180px;
+        width: 100%;
+        overflow: hidden;
+      }
+      img{
+       height: 100%;
+       width: 100%;
+       object-fit: cover;
+       transition: 2s ease;
+      }
+      img:hover{
+       transform: scale(1.1);
+      }
     .singleDestination {
         height: 100%;
         /* padding: 1rem; */
@@ -72,7 +68,7 @@
        .singleDestination:hover{
          background: var(--cardHover);
          box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
-         transition: .3s ease;
+         transition: 1.5s ease;
        }
     .cardInfo{
         padding: 1rem;
@@ -84,19 +80,17 @@
 
         .continet {
             gap: .5rem;
-
-
-            .icon {
-                color: var(--textColor);
-                font-size: 18px;
-            }
     
-            .name{
-                color: var(--textColor);
-                font-weight: 400;
-                font-size: 14px;
-            }
         }
+    }
+    .name{
+        color: var(--textColor);
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .icon {
+        color: var(--textColor);
+        font-size: 18px;
     }
     .fees {
         width: 100%;
@@ -137,8 +131,9 @@
     .icon {
         align-self: center;
         font-size: 18px;
+        color: var(--whiteColor);
     }
-    small {
+    .one {
         text-align: center;
         background: var(--gradientColor);
         border-radius: 1rem;
@@ -146,3 +141,27 @@
         padding: 1px 10px;
         font-size: 10px;
     }
+
+@media screen and (min-width: 500px) {
+    .title{
+        font-size: 1.5rem;
+    }
+    .title::after {
+        width: 155px !important;
+    }
+    .secContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .singleDestination {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .secContent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .singleDestination {
+        height: auto;
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './main.css';
 import img from '../assets/bora.jpg';
 import img2 from '../assets/machu.jpg';
@@ -10,6 +10,9 @@ import img7 from '../assets/angkor.jpg';
 import img8 from '../assets/tajmahal.jpg';
 import img9 from '../assets/bali.jpg'
 import {HiOutlineClipboardCheck, HiOutlineLocationMarker} from 'react-icons/hi'
+
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 
 const Main = () => {
@@ -97,11 +100,15 @@ const Main = () => {
       description: 'Bali is an Indonesian Island and one of the best holiday destinations in the Indonesan archipelago. Bali is known for its volcanic mountains, history, art & culture, food, temples and beautiful sandy beaches.'
     }
   ]
+
+  useEffect(() => {
+    Aos.init({duration: 2000})
+  }, [])
   return (
     <section className="main container section">
 
       <div className="secTitle">
-        <h3 className="titl">Most visited desnitations</h3>
+        <h3 data-aos="fade-right" className="title">Most visited desnitations</h3>
       </div>
 
       <div className="secContent grid">
@@ -109,7 +116,7 @@ const Main = () => {
         {
           Data.map(({id, imgSrc, destTitle, location, grade, fees, description}) => {
            return (
-            <div key={id} className="singleDestination">
+            <div key={id} data-aos="fade-up" className="singleDestination">
              
              <div className="imageDiv">
               <img src={imgSrc} alt={destTitle} />
@@ -124,7 +131,7 @@ const Main = () => {
 
               <div className="fees flex">
                 <div className="grade">
-                  <span>{grade}<small>+1</small></span>
+                  <span>{grade}<small className='one'>+1</small></span>
                 </div>
                 <div className="price">
                  <h5>{fees}</h5>
